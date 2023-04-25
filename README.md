@@ -1,29 +1,31 @@
 # Twitch Proxy Service
 Proxy Service for Oculus Quest: re-encode Twitch content for compatibility with Oculus Quest devices
 
-In this project, I am trying to create a proxy service for Twitch.tv.
-The goal is to be able to watch Twitch.tv streams on VRChat running on Oculus Quest.
+In this project, I aim to create a proxy service for Twitch.tv that enables watching Twitch streams on VRChat running on Oculus Quest.
 
 ## The problem
-The quest is not able to play twitch URLs directly.
-It also is not able to process the M3U8 files that are used to stream twitch.
+The Oculus Quest cannot play Twitch URLs directly nor process the M3U8 files used for streaming on Twitch.
 
-## Potential solution
-The solution is to create a proxy service that will take the m3u8 file and re-encode it to a format that the quest can play.
+## Proposed Solution
+The proposed solution involves creating a proxy service that takes the M3U8 file and re-encodes it into a format compatible with the Oculus Quest.
 
-## Work in progress
-This project is still in development and is not yet functional.
-This is the current state of the project:
-The re-encoded stream plays for a few seconds (3-5) and then stops.
-I am not sure why this is happening. Might be that the encoding is far too slow or that there is a problem with the re-encoded stream.
+## Current Progress
+This project is a work in progress and has not yet reached full functionality. The current state of the project is as follows:
+The re-encoded stream plays for a brief period (3-5 seconds) before stopping. The cause of this issue remains uncertain — it could be due to slow encoding or an issue with the re-encoded stream itself.
+Note: I have temporarily paused development on this project due to other commitments and limited progress. However, anyone interested in continuing from where I left off is welcome to do so.
 
 ## How to run the service
 ```bash
 docker build -t twitch_proxy_service .
 docker run -p 80:80 twitch_proxy_service
 ```
+Once the service is running, you can access the stream via the following URL:
+```
+http://localhost/stream/{channelname}
+``` 
 
-## Some usefull commands for development
+
+## Useful Commands for Development
 ```bash
 python3 -m venv venv
 source venv/bin/activate  # For Linux/macOS
