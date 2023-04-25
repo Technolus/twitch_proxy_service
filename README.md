@@ -14,6 +14,10 @@ This project is a work in progress and has not yet reached full functionality. T
 The re-encoded stream plays for a brief period (3-5 seconds) before stopping. The cause of this issue remains uncertain — it could be due to slow encoding or an issue with the re-encoded stream itself.
 Note: I have temporarily paused development on this project due to other commitments and limited progress. However, anyone interested in continuing from where I left off is welcome to do so.
 
+## Potential Dead End
+It appears that the player does not connect to the segment URLs at all. Therefore, addressing the issue may require starting with the player itself and implementing an alternate mechanism in Udon to parse the file. However, it's worth noting that Udon does not currently support the creation of VRCUrls on the fly, which further complicates the development of a solution.
+
+
 ## How to run the service
 ```bash
 docker build -t twitch_proxy_service .
